@@ -2,7 +2,7 @@ import { SkateboardCanvas } from "./3dScene/SkateboardCanvas";
 import { TallLogo } from "./TallLogo";
 import { WideLogo } from "./WideLogo";
 
-const DEFAULT_GRIPTAPE_COLOR = "hotpink";
+const DEFAULT_GRIPTAPE_COLOR = "rebeccapurple";
 const DEFAULT_BOLT_COLOR = "#555";
 const DEFAULT_BASEPLATE_COLOR = "cyan"; // Optional, will fall back to truck color
 const DEFAULT_TRUCK_COLOR = "white";
