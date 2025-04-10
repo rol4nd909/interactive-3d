@@ -1,0 +1,99 @@
+@utility bg-texture {
+  background-image: url("/bg-texture.webp");
+  background-size: 720px 460px;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+@utility stack-layout {
+  display: grid;
+
+  & > *,
+  &::before,
+  &::after {
+    grid-area: 1 / 1;
+  }
+}
+
+@utility constrained-grid {
+  display: grid;
+  grid-template-columns:
+    [fullbleed-start]
+    minmax(var(--gutter, 1rem), 1fr)
+    [breakout-start]
+    minmax(0, calc((var(--breakout) - var(--content)) / 2))
+    [content-start]
+    min(100% - (var(--gutter, 1rem) * 2), var(--content))
+    [content-end]
+    minmax(0, calc((var(--breakout) - var(--content)) / 2))
+    [breakout-end]
+    minmax(var(--gutter, 1rem), 1fr)
+    [fullbleed-end];
+}
+
+@utility constrained-col-content {
+  grid-column: content;
+}
+
+@utility constrained-col-breakout {
+  grid-column: breakout;
+}
+
+@utility constrained-col-fullbleed {
+  display: grid;
+  grid-template-columns: subgrid;
+
+  grid-column: fullbleed;
+}
+
+/* Special btn util */
+@utility btn-cutout {
+  position: relative;
+  filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000)
+    drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000)
+    drop-shadow(8px 8px 0 #000);
+
+  &:hover {
+    filter: drop-shadow(0 1px 0 #000) drop-shadow(-1px 0 0 #000)
+      drop-shadow(1px 0 0 #000) drop-shadow(0 -1px 0 #000)
+      drop-shadow(2px 2px 0 #000);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    background: inherit;
+    width: 1rem;
+    height: 100%;
+  }
+
+  &::before {
+    inset-inline-end: calc(100% - 1px);
+    clip-path: polygon(
+      23% 19%,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      29% 79%,
+      9% 80%,
+      0 33%
+    );
+  }
+
+  &::after {
+    inset-inline-start: calc(100% - 1px);
+    clip-path: polygon(
+      100% 0,
+      74% 28%,
+      100% 29%,
+      100% 70%,
+      84% 78%,
+      100% 100%,
+      0 100%,
+      0 0
+    );
+  }
+}

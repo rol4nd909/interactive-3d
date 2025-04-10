@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --breakout: 69rem;
+    --content: 51rem;
+
+    --gutter: 1.5rem;
+  }
+}
+
+@theme {
+  --color-brand-blue: #4876ff;
+  --color-brand-lime: #d9f154;
+  --color-brand-navy: #2e3192;
+  --color-brand-orange: #ff7347;
+  --color-brand-pink: #f7d0e9;
+  --color-brand-purple: #692e54;
+  --color-brand-gray: #fffdf9;
+
+  --font-sans: "Bowlby One SC", sans-serif;
+  --font-mono: "DM Mono", monospace;
+
+  /* @link https://utopia.fyi/type/calculator?c=600,16,1.25,1200,18,1.333,5,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --text-fluid-0: clamp(1rem, 0.875rem + 0.3333cqi, 1.125rem);
+  --text-fluid-1: clamp(1.125rem, 1rem + 0.3333cqi, 1.25rem);
+  --text-fluid-2: clamp(1.125rem, 0.75rem + 1cqi, 1.5rem);
+  --text-fluid-3: clamp(1.9531rem, 1.2416rem + 1.8974cqi, 2.6647rem);
+  --text-fluid-4: clamp(2.4414rem, 1.3308rem + 2.9616cqi, 3.552rem);
+  --text-fluid-5: clamp(2.25rem, 0rem + 6cqi, 4.5rem);
+
+  /* animations */
+  --animate-squiggle: squiggle 0.5s infinite;
+
+  @keyframes squiggle {
+    0% {
+      filter: url("#squiggle-0");
+    }
+    25% {
+      filter: url("#squiggle-1");
+    }
+    50% {
+      filter: url("#squiggle-2");
+    }
+    75% {
+      filter: url("#squiggle-3");
+    }
+    100% {
+      filter: url("#squiggle-4");
+    }
+  }
+}
+
+@import "./custom-utilities.css";
