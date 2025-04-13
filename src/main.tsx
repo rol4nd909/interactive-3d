@@ -1,19 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Home } from "@/pages/home";
 import { Customizer } from "@/pages/customizer";
+import { Router } from "./Router";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path={import.meta.env.BASE_URL} element={<Home />} />
-        <Route
-          path={`${import.meta.env.BASE_URL}customizer`}
-          element={<Customizer />}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/customizer" element={<Customizer />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   </StrictMode>
 );

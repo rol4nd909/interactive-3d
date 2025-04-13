@@ -62,7 +62,7 @@ export function Hero({
           </p>
 
           <Link
-            to={`${import.meta.env.BASE_URL}customizer`}
+            to="/customizer"
             className="btn-cutout group mx-4 items-center bg-gradient-to-b from-25% to-75% bg-[length:100%_400%] font-bold transition-[filter,background-position] duration-300 hover:bg-bottom text-fluid-2 gap-4 px-2 py-4 from-brand-orange to-brand-lime text-black hover:text-black z-20 mt-2 inline-flex"
           >
             <div className="flex items-center justify-center transition-transform group-hover:-rotate-[25deg] [&>svg]:h-full [&>svg]:w-full size-8">

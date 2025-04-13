@@ -40,10 +40,7 @@ export function BoardCustomizer() {
         defaultBolts={defaultBolts}
       >
         <div className="bg-[#3a414a] max-lg:aspect-square relative">
-          <Link
-            to={import.meta.env.BASE_URL}
-            className="absolute text-white left-6 top-6 z-10"
-          >
+          <Link to="/" className="absolute text-white left-6 top-6 z-10">
             <Logo className="h-12" />
           </Link>
 
