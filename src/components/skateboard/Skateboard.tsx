@@ -212,8 +212,9 @@ export function Skateboard({
   useFrame(() => {
     if (!wheelRefs.current || !constantWheelSpin) return;
 
+    const rotationSpeed = 0.2;
     for (const wheel of wheelRefs.current) {
-      wheel.rotation.x += 0.2;
+      wheel.rotation.x += rotationSpeed;
     }
   });
 

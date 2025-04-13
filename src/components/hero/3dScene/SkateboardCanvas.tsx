@@ -23,7 +23,7 @@ export function SkateboardCanvas({
   return (
     <div className="grid col-[1/-1] row-[1/-1] z-10">
       <Canvas camera={{ position: INITIAL_CAMERA_POSITION, fov: 55 }}>
-        <Suspense>
+        <Suspense fallback={null}>
           <SkateboardScene
             gripTapeColor={gripTapeColor}
             boltColor={boltColor}

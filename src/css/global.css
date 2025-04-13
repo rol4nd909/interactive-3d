@@ -27,7 +27,7 @@
   --text-fluid-0: clamp(1rem, 0.875rem + 0.3333cqi, 1.125rem);
   --text-fluid-1: clamp(1.125rem, 1rem + 0.3333cqi, 1.25rem);
   --text-fluid-2: clamp(1.125rem, 0.75rem + 1cqi, 1.5rem);
-  --text-fluid-3: clamp(1.9531rem, 1.2416rem + 1.8974cqi, 2.6647rem);
+  --text-fluid-3: clamp(1.5rem, 0.75rem + 2cqi, 2.25rem);
   --text-fluid-4: clamp(2.4414rem, 1.3308rem + 2.9616cqi, 3.552rem);
   --text-fluid-5: clamp(2.25rem, 0rem + 6cqi, 4.5rem);
 
