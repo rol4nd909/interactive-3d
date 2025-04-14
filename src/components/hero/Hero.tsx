@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SkateboardCanvas } from "./3dScene/SkateboardCanvas";
 import { TallLogo } from "./TallLogo";
 import { WideLogo } from "./WideLogo";
@@ -60,8 +61,8 @@ export function Hero({
             as the places you take it.
           </p>
 
-          <a
-            href="/#/customizer"
+          <Link
+            to="/#/customizer"
             className="btn-cutout group mx-4 items-center bg-gradient-to-b from-25% to-75% bg-[length:100%_400%] font-bold transition-[filter,background-position] duration-300 hover:bg-bottom text-fluid-2 gap-4 px-2 py-4 from-brand-orange to-brand-lime text-black hover:text-black z-20 mt-2 inline-flex"
           >
             <div className="flex items-center justify-center transition-transform group-hover:-rotate-[25deg] [&>svg]:h-full [&>svg]:w-full size-8">
@@ -79,7 +80,7 @@ export function Hero({
             </div>
             <div className="w-px self-stretch bg-black/25" />
             Build Your Board
-          </a>
+          </Link>
         </div>
       </div>
 
