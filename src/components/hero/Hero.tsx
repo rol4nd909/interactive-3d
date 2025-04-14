@@ -46,8 +46,8 @@ export function Hero({
         className="absolute inset-0 place-items-center stack-layout overflow-clip pointer-events-none"
         aria-hidden
       >
-        <WideLogo className="text-brand-purple hidden opacity-20 mix-blend-multiply lg:block" />
-        <TallLogo className="text-brand-purple opacity-20 mix-blend-multiply lg:hidden" />
+        <WideLogo className="text-brand-purple hidden opacity-20 mix-blend-multiply desktop:block" />
+        <TallLogo className="text-brand-purple opacity-20 mix-blend-multiply desktop:hidden" />
       </div>
 
       <div className="grid grid-rows-[1fr_auto] row-span-full constrained-col-breakout py-16">
@@ -55,7 +55,7 @@ export function Hero({
           Escape the Cul-de-sac
         </h1>
 
-        <div className="flex flex-col items-center justify-between gap-4 lg:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 desktop:flex-row">
           <p className="max-w-[45ch] font-semibold text-fluid-1">
             Not just a board, <em>your</em> board. Design a board that's as real
             as the places you take it.

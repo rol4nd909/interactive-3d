@@ -28,7 +28,7 @@ export function BoardCustomizer() {
 
   return (
     <div
-      className="min-h-screen lg:grid grid-cols-[1fr_24rem] relative"
+      className="min-h-screen desktop:grid grid-cols-[1fr_24rem] relative"
       id="customizer"
     >
       <CustomizerControlsProvider
@@ -39,7 +39,7 @@ export function BoardCustomizer() {
         defaultTrucks={defaultTrucks}
         defaultBolts={defaultBolts}
       >
-        <div className="bg-[#3a414a] max-lg:aspect-square relative">
+        <div className="bg-[#3a414a] aspect-square tablet-p:aspect-[3/2] desktop:aspect-auto relative">
           <Link to="/" className="absolute text-white left-6 top-6 z-10">
             <Logo className="h-12" />
           </Link>
@@ -52,7 +52,7 @@ export function BoardCustomizer() {
           </div>
         </div>
 
-        <div className="bg-zinc-900 bg-texture text-white p-6 grid gap-8 max-h-screen">
+        <div className="bg-zinc-900 bg-texture text-white p-6 grid gap-8 desktop:max-h-screen">
           <h2 className="text-fluid-3 uppercase font-sans leading-[1.15]">
             Build your board
           </h2>

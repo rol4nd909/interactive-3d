@@ -47,7 +47,9 @@ export function Controls({ wheels, decks, metals, clasName }: ControlsProps) {
   }
 
   return (
-    <div className={clsx("overflow-y-auto px-[2px]", clasName)}>
+    // "relative" is needed to prevent overflow because of the sr-only text
+    // in the Option component
+    <div className={clsx("overflow-y-auto p-[2px] flex-1 relative", clasName)}>
       <div className="grid gap-6">
         <Options title="Deck" selectedName={selectedDeck?.uid}>
           {decks.map((deck) => (
@@ -171,7 +173,7 @@ function Options({ title, selectedName, children }: OptionsProps) {
         </p>
       </div>
 
-      <ul className="flex flex-wrap gap-4">{children}</ul>
+      <div className="flex flex-wrap gap-4">{children}</div>
     </div>
   );
 }
@@ -184,29 +186,23 @@ type OptionProps = Omit<ComponentProps<"button">, "children"> & {
 
 function Option({ children, selected, texture, color, onClick }: OptionProps) {
   return (
-    <li>
-      <button
-        className={clsx(
-          "size-10 cursor-pointer rounded-full border-4 border-black outline-white overflow-clip",
-          selected && "outline-2"
-        )}
-        onClick={onClick}
-      >
-        {texture ? (
-          <img
-            className="pointer-events-none object-cover size-full"
-            src={texture}
-            alt=""
-          />
-        ) : (
-          <div
-            className="size-full rounded-full"
-            style={{ backgroundColor: color }}
-          ></div>
-        )}
+    <button
+      className={clsx(
+        "size-10 cursor-pointer rounded-full border-4 border-black outline-white overflow-hidden",
+        selected && "outline-2"
+      )}
+      onClick={onClick}
+      style={{ backgroundColor: color }}
+    >
+      {texture && (
+        <img
+          className="pointer-events-none object-cover size-full"
+          src={texture}
+          alt=""
+        />
+      )}
 
-        <span className="sr-only">{children}</span>
-      </button>
-    </li>
+      <span className="sr-only">{children}</span>
+    </button>
   );
 }

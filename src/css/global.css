@@ -31,6 +31,11 @@
   --text-fluid-4: clamp(2.4414rem, 1.3308rem + 2.9616cqi, 3.552rem);
   --text-fluid-5: clamp(2.25rem, 0rem + 6cqi, 4.5rem);
 
+  --breakpoint-*: initial;
+  --breakpoint-tablet-p: 37.5em;
+  --breakpoint-tablet-l: 56.25em;
+  --breakpoint-desktop: 75rem;
+
   /* animations */
   --animate-squiggle: squiggle 0.5s infinite;
 
