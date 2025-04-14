@@ -1,54 +1,126 @@
-# React + TypeScript + Vite
+# Suburbia Skate
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Suburbia Skate is an interactive 3D skateboarding experience built with modern web technologies like React, Three.js, TailwindCSS, and GSAP. It allows users to customize skateboards and interact with a 3D scene in real-time.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **3D Skateboard Customization**: Change grip tape, bolts, trucks, and deck textures.
+- **Interactive 3D Scene**: Perform animations like ollies and kickflips.
+- **Responsive Design**: Optimized for various screen sizes.
+- **Modern Stack**: Built with Vite, React, Three.js, TailwindCSS, and GSAP.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**: For building the user interface.
+- **Three.js**: For rendering 3D graphics.
+- **@react-three/fiber**: React renderer for Three.js.
+- **@react-three/drei**: Useful helpers for Three.js.
+- **GSAP**: For smooth animations.
+- **TailwindCSS**: For styling.
+- **Vite**: For fast development and build tooling.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- **Node.js**: Version 18 or higher.
+- **pnpm**: For managing dependencies.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/suburbia-skate.git
+   cd suburbia-skate
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+### Development
+
+Start the development server:
+
+```bash
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open your browser and navigate to `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To create a production build:
+
+```bash
+pnpm build
 ```
+
+The build output will be in the `dist` directory.
+
+### Preview
+
+To preview the production build:
+
+```bash
+pnpm preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/       # React components
+│   ├── hero/         # Hero section components
+│   ├── skateboard/   # Skateboard-related components
+├── css/              # Global and utility CSS
+├── pages/            # Application pages
+├── hooks/            # Custom React hooks
+├── constants/        # Shared constants
+├── assets/           # Static assets
+└── main.tsx          # Application entry point
+```
+
+## Customization
+
+### Skateboard Customization
+
+You can customize the skateboard by modifying the default values in `src/components/hero/Hero.tsx`:
+
+```tsx
+const DEFAULT_GRIPTAPE_COLOR = "rebeccapurple";
+const DEFAULT_BOLT_COLOR = "hotpink";
+const DEFAULT_BASEPLATE_COLOR = "cyan";
+const DEFAULT_TRUCK_COLOR = "white";
+const DEFAULT_DECK_TEXTURE = [
+  `${import.meta.env.BASE_URL}skateboard/PinkSwirl.png`,
+];
+const DEFAULT_WHEEL_TEXTURE = [
+  `${import.meta.env.BASE_URL}skateboard/SkateWheel1.png`,
+];
+```
+
+### Environment HDR
+
+The environment HDR file is located in `public/hdr/warehouse-256.hdr`. Replace it with your own HDR file for a different lighting setup.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m "Add feature-name"`.
+4. Push to the branch: `git push origin feature-name`.
+5. Open a pull request.
+
+## Acknowledgments
+
+- [React Three Fiber](https://github.com/pmndrs/react-three-fiber)
+- [GSAP](https://greensock.com/gsap/)
+- [TailwindCSS](https://tailwindcss.com/)
