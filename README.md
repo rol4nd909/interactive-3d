@@ -71,44 +71,6 @@ To preview the production build:
 pnpm preview
 ```
 
-## Project Structure
-
-```
-src/
-├── components/       # React components
-│   ├── hero/         # Hero section components
-│   ├── skateboard/   # Skateboard-related components
-├── css/              # Global and utility CSS
-├── pages/            # Application pages
-├── hooks/            # Custom React hooks
-├── constants/        # Shared constants
-├── assets/           # Static assets
-└── main.tsx          # Application entry point
-```
-
-## Customization
-
-### Skateboard Customization
-
-You can customize the skateboard by modifying the default values in `src/components/hero/Hero.tsx`:
-
-```tsx
-const DEFAULT_GRIPTAPE_COLOR = "rebeccapurple";
-const DEFAULT_BOLT_COLOR = "hotpink";
-const DEFAULT_BASEPLATE_COLOR = "cyan";
-const DEFAULT_TRUCK_COLOR = "white";
-const DEFAULT_DECK_TEXTURE = [
-  `${import.meta.env.BASE_URL}skateboard/PinkSwirl.png`,
-];
-const DEFAULT_WHEEL_TEXTURE = [
-  `${import.meta.env.BASE_URL}skateboard/SkateWheel1.png`,
-];
-```
-
-### Environment HDR
-
-The environment HDR file is located in `public/hdr/warehouse-256.hdr`. Replace it with your own HDR file for a different lighting setup.
-
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
