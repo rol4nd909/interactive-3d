@@ -5,6 +5,7 @@ import { CustomizerControlsProvider } from "./context/CustomizerControlsProvider
 import { Controls } from "./Controls";
 import { Preview } from "./Preview";
 import Loading from "./Loading";
+import clsx from "clsx";
 
 export function BoardCustomizer() {
   const [searchParams] = useSearchParams();
@@ -63,7 +64,13 @@ export function BoardCustomizer() {
             className="btn-cutout group mx-4 items-center bg-gradient-to-b from-25% to-75% bg-[length:100%_400%] font-bold transition-[filter,background-position] duration-300 hover:bg-bottom gap-3 px-1 text-lg py-3 from-brand-lime to-brand-orange text-black inline-flex"
             href=""
           >
-            <div className="flex size-6 items-center justify-center transition-transform group-hover:-rotate-[25deg] [&amp;&gt;svg]:h-full [&amp;&gt;svg]:w-full size-6">
+            <div
+              className={clsx(
+                "flex items-center justify-center",
+                "transition-transform size-6",
+                "group-hover:-rotate-[25deg] [&svg]:size-full"
+              )}
+            >
               <svg
                 stroke="currentColor"
                 fill="currentColor"
